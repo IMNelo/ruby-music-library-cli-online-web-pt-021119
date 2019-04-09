@@ -8,7 +8,7 @@ class Artist
   end
 
   def self.all #class method
-    @@all #returns the class variable which contains the collection/instances of artist from @@all = []
+    self.all #returns the class variable which contains the collection/instances of artist from @@all = []
   end
 
 end
