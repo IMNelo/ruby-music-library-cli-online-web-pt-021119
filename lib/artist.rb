@@ -1,14 +1,14 @@
 class Artist
 
-  attr_accessor :name  #'sets' (writer) and 'retrieves'(reader) the name of an artist
+  attr_accessor :name #'sets' (writer) and 'retrieves'(reader) the name of an artist
 
-  def initialize(name)  #automatically requires
-    @name = name  #accepts a name for the new artist
-    @@all = [] #automatically stores a new instance of artist when it's created
+  def initialize(name) #automatically instantiates a new artist & requires an argument (name)
+    @name = name #accepts a (name) for the new instance of artist
+    @@all = [] #automatically stores the new instances of artist in the @@all = [] class variable
   end
 
   def self.all #class method
-    @@all #returns the class variable which contains the collection/instances of artist from @@all = []
+    @@all #returns the @@all class variable which contains the collection of artists
   end
 
   def self.destroy_all #class method

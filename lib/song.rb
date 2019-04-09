@@ -2,13 +2,13 @@ class Song
 
   attr_accessor :name  #can set the name of a song + retrieves the name of a song
 
-  def initialize(name)
-    @name = name  #accepts a name for the new song
-    @@all = []  #automatically stores new instances on song as they're created & puts them into the @@all = [] which stores the collection
+  def initialize(name) #automatically instantiates a new song & requires an argument (name)
+    @name = name #accepts a (name) for the new instance of song
+    @@all = [] #automatically stores the new instance of song in the @@all = [] class variable
   end
 
   def self.all  #class method
-    @@all  #returns the class variable @@all, exposes the collection/instances of songs
+    @@all  #returns the @@all class variable which contains the collection of songs
   end
 
   def self.destroy_all  #class method
