@@ -5,15 +5,15 @@ class Genre
   def initialize(name) #automatically instantiates a new genre & requires an argument (name)
     @name = name #accepts a (name) for the new instance of genre
     @@all = [] #automatically stores the new instance of genre in the @@all = [] class variable
-    @songs = []
+    @songs = [] #automatically stores instances of songs
   end
 
   def self.all #class method
     @@all #returns the collection of genre stored in the @@all class variable
   end
 
-  def songs
-    @songs
+  def songs #instance method
+    @songs #returns the collection of songs stored in the @songs instance variable
   end
 
   def self.destroy_all #class method

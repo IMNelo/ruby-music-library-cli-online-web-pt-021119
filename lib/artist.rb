@@ -30,4 +30,9 @@ class Artist
     new_artist #returns the new instance, new_artist
   end
 
+  def add_song(song) #instance method
+    song.artist= self if song.artist == nil
+    self.songs << song unless self.songs.include?(song)
+  end
+
 end
