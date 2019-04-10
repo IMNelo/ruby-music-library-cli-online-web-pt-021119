@@ -1,6 +1,6 @@
 class Genre
 
-  attr_accessor :name #'sets' (writer) & 'retrieves'(reader) the name of a genre
+  attr_accessor :name #sets and retrieves the name of a genre
 
   def initialize(name) #automatically instantiates a new genre & requires an argument (name)
     @name = name #accepts a (name) for the new instance of genre

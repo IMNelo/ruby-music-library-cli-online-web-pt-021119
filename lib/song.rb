@@ -1,6 +1,6 @@
 class Song
 
-  attr_accessor :name  #can set the name of a song + retrieves the name of a song
+  attr_accessor :name  #sets and retrieves the name of a song
 
   def initialize(name) #automatically instantiates a new song & requires an argument (name)
     @name = name #accepts a (name) for the new instance of song
@@ -23,6 +23,19 @@ class Song
     new_song = Song.new(name)  #creates new_song
     new_song.save  #saves new_song
     new_song  #returns new_song
+  end
+
+  def initialize(name)
+    @name = name
+    @@all = []
+  end
+
+  def self.all
+    @@all
+  end
+
+  def self.destroy_all
+    @@all = []
   end
 
 end

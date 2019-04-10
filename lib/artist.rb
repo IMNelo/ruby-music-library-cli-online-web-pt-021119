@@ -1,10 +1,10 @@
 class Artist
 
-  attr_accessor :name #'sets' (writer) and 'retrieves'(reader) the name of an artist
+  attr_accessor :name #sets and retrieves the name of an artist
 
   def initialize(name) #automatically instantiates a new artist & requires an argument (name)
     @name = name #accepts a (name) for the new instance of artist
-    @@all = [] #automatically stores the new instances of artist in the @@all = [] class variable
+    @@all = [] #automatically stores the new instance of artist in the @@all = [] class variable
   end
 
   def self.all #class method
@@ -20,8 +20,8 @@ class Artist
   end
 
   def self.create(name) #class method, passing (name) as an argument
-    new_artist = Artist.new(name) #instantiates a new instance of artist (Note: a 'name' is required by the 'initialize' method above)
-    new_artist.save #calls the 'save method' (defined above) on the instance 'new_artist' just created & saves it to the @@all class variable
+    new_artist = Artist.new(name) #instantiates a new instance of artist & requires a (name) as defined by the 'initialize' method defined above
+    new_artist.save #calls the 'save method' (defined above) on the instance, 'new_artist', which was just created & saves it to the @@all class variable
     new_artist
   end
 
