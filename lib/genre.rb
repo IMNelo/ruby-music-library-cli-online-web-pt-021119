@@ -8,7 +8,21 @@ class Genre
   end
 
   def self.all #class method
-    @@all #returns the @@all class variable which contains the collection of genres
+    @@all #returns the collection of genre stored in the @@all class variable
+  end
+
+  def self.destroy_all #class method
+    @@all = [] #resets the @@all class variable & returns an empty array
+  end
+
+  def save #instance method
+    @@all << self #adds & saves the genre instance to @@all & returns the collection
+  end
+
+  def self.create(name) #class method, passes (name) as an argument
+    new_genre = Genre.new(name) #instantiates a new instance of genre & requires a (name) as defined by the 'initialize' method above
+    new_genre.save #saves the new instance of genre to the @@all class variable, this is done by calling the 'save method' on the new instance
+    new_genre #returns the new instance, new_genre
   end
 
 end

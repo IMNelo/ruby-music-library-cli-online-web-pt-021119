@@ -1,28 +1,28 @@
 class Song
 
-  attr_accessor :name  #sets and retrieves the name of a song
+  attr_accessor :name #sets and retrieves the name of a song
 
   def initialize(name) #automatically instantiates a new song & requires an argument (name)
     @name = name #accepts a (name) for the new instance of song
     @@all = [] #automatically stores the new instance of song in the @@all = [] class variable
   end
 
-  def self.all  #class method
-    @@all  #returns the @@all class variable which contains the collection of songs
+  def self.all #class method
+    @@all  #returns the collection of song stored in the @@all class variable
   end
 
-  def self.destroy_all  #class method
-    @@all = []  #resets by empting out the collection of songs from @@all = [] & returns the empty @@all class variable
+  def self.destroy_all #class method
+    @@all = [] #resets the @@all class variable & returns an empty array
   end
 
-  def save  #instance method
-    @@all << self  #adds every new instance of a song to the @@all = [] collection & returns the @@all class variable
+  def save #instance method
+    @@all << self #adds & saves the new instance of a song to @@all & returns the collection
   end
 
-  def self.create(name)  #class method passing (name) as an argument
-    new_song = Song.new(name)  #creates new_song
-    new_song.save  #saves new_song
-    new_song  #returns new_song
+  def self.create(name) #class method, passes (name) as an argument
+    new_song = Song.new(name) #instantiates a new instance of song & requires a (name) as defined by the 'initialize' method above
+    new_song.save #saves the new instance of song to the @@all class variable, this is done by calling the 'save method' on the new instance
+    new_song  #returns the new instance, new_song
   end
 
   def initialize(name)

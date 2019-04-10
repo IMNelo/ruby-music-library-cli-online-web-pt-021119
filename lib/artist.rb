@@ -5,25 +5,29 @@ class Artist
   def initialize(name) #automatically instantiates a new artist & requires an argument (name)
     @name = name #accepts a (name) for the new instance of artist
     @@all = [] #automatically stores the new instance of artist in the @@all = [] class variable
+    @songs = [] #automatically stores instances of songs
   end
 
   def self.all #class method
-    @@all #returns the @@all class variable which contains the collection of artists
+    @@all #returns the collection of artists stored in the @@all class variable
+  end
+
+  def songs #instance method
+    @songs #returns the collection of songs stored in the @songs instance variable
   end
 
   def self.destroy_all #class method
-    @@all = [] #resets the class variable @@all & returns an empty array
+    @@all = [] #resets the @@all class variable & returns an empty array
   end
 
   def save #instance method
-    @@all << self #shovels every new instance of artist into the @@all = [] collection where it's saved & stored
+    @@all << self #adds & saves the new instance of an artist to @@all & returns the collection
   end
 
-  def self.create(name) #class method, passing (name) as an argument
-    new_artist = Artist.new(name) #instantiates a new instance of artist & requires a (name) as defined by the 'initialize' method defined above
-    new_artist.save #calls the 'save method' (defined above) on the instance, 'new_artist', which was just created & saves it to the @@all class variable
-    new_artist
+  def self.create(name) #class method, passes (name) as an argument
+    new_artist = Artist.new(name) #instantiates a new instance of artist & requires a (name) as defined by the 'initialize' method above
+    new_artist.save #saves the new instance of artist to the @@all class variable, this is done by calling the 'save method' on the new instance
+    new_artist #returns the new instance, new_artist
   end
-
 
 end
