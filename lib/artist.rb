@@ -32,7 +32,7 @@ class Artist
 
   def add_song(song) #instance method
     song.artist= self if song.artist == nil
-    self.songs << song unless self.songs.include?(song)
+    self.songs << song unless self.songs.include?(song) #adds new instance of a song to the @songs = [] instance variable unless the song already exists in the collection in which case the code would do nothing
   end
 
 end
