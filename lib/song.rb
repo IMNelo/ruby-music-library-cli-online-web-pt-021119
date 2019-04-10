@@ -27,17 +27,4 @@ class Song
     new_song  #returns the new instance, new_song
   end
 
-  def initialize(name)
-    @name = name
-    @@all = []
-  end
-
-  def self.all
-    @@all
-  end
-
-  def self.destroy_all
-    @@all = []
-  end
-
 end
