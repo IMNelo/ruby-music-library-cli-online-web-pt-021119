@@ -1,10 +1,13 @@
 class Song
 
   attr_accessor :name #sets and retrieves the name of a song
+  attr_writer :artist
 
-  def initialize(name) #automatically instantiates a new song & requires an argument (name)
+  def initialize(name, artist = nil) #automatically instantiates a new song & requires an argument (name)
     @name = name #accepts a (name) for the new instance of song
     @@all = [] #automatically stores the new instance of song in the @@all = [] class variable
+    @artist = artist
+    #FAILED - can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)
   end
 
   def self.all #class method
