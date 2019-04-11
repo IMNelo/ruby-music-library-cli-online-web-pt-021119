@@ -1,3 +1,5 @@
+require 'pry'
+
 class Artist
   extend Concerns::Findable
 
@@ -31,6 +33,7 @@ class Artist
     #@song #returns the collection of songs stored in the @songs instance variable
       self.all
       #artist.songs << song
+      binding.pry
   end
 
   def add_song(song) #instance method
