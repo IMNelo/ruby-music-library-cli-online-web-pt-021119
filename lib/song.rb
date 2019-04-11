@@ -9,10 +9,6 @@ class Song
     @@all = [] #automatically stores the new instance of song in the @@all = [] class variable
   end
 
-  def name=(name)
-    @name = name
-  end
-
   def self.all #class method
     @@all  #returns the collection of song stored in the @@all class variable
   end
