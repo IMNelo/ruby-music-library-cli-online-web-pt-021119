@@ -32,7 +32,7 @@ class Artist
   end
 
   def songs #instance method
-    @songs #returns the collection of songs stored in the @songs instance variable
+    artist.songs #returns the collection of songs stored in the @songs instance variable
   end
 
   def add_song(song) #instance method

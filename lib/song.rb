@@ -1,6 +1,6 @@
 class Song
 
-  attr_accessor :name, :artist, :genre #sets and retrieves the name of a song
+  attr_accessor :name, :artist, :genre, :song #:name> sets and retrieves the name of a song
 
   def initialize(name, artist = nil, genre = nil) #automatically instantiates a new song & requires an argument (name)
     @name = name #accepts a (name) for the new instance of song
