@@ -1,3 +1,5 @@
+require 'pry'
+
 class Artist
   extend Concerns::Findable
 
@@ -8,10 +10,6 @@ class Artist
     @@all = [] #automatically stores the new instance of artist in the @@all = [] class variable
     @songs = [] #automatically stores instances of songs
   end
-
-  #def name=(name)
-  #  @name = name
-  #end
 
   def self.all #class method
     @@all #returns the collection of artists stored in the @@all class variable
