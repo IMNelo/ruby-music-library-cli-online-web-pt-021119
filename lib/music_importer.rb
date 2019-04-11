@@ -7,7 +7,7 @@ class MusicImporter
   end
 
   def file
-    Dir.glob("#{path}/*.mp3").collect { |file| file.gsub("#{path}/", '\1')}
+    Dir.glob("#{path}/*.mp3").collect { |file| file.gsub("#{path}/'\1'", "")}
     #{Dir.getwd.sub(/.*ruby(.*)/, '\1')}"
   end
 
