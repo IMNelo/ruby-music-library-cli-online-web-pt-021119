@@ -34,6 +34,7 @@ class Artist
       self.all
       #artist.songs << song
       binding.pry
+      puts "string"
   end
 
   def add_song(song) #instance method
