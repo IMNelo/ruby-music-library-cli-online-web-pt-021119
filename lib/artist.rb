@@ -9,10 +9,6 @@ class Artist
     @songs = [] #automatically stores instances of songs
   end
 
-  #def name=(name)
-  #  @name = name
-  #end
-
   def self.all #class method
     @@all #returns the collection of artists stored in the @@all class variable
   end
