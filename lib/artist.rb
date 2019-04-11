@@ -32,8 +32,9 @@ class Artist
   def songs #instance method
     #@song #returns the collection of songs stored in the @songs instance variable
       self.all
+            binding.pry
       #artist.songs << song
-      binding.pry
+
       puts "string"
   end
 
