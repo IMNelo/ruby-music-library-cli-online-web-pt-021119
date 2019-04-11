@@ -1,4 +1,5 @@
 class Genre
+  extend Concerns::Findable
 
   attr_accessor :name #sets and retrieves the name of a genre
 
@@ -10,10 +11,6 @@ class Genre
 
   def self.all #class method
     @@all #returns the collection of genre stored in the @@all class variable
-  end
-
-  def songs #instance method
-    @songs #returns the collection of songs stored in the @songs instance variable
   end
 
   def self.destroy_all #class method
@@ -28,6 +25,14 @@ class Genre
     new_genre = Genre.new(name) #instantiates a new instance of genre & requires a (name) as defined by the 'initialize' method above
     new_genre.save #saves the new instance of genre to the @@all class variable, this is done by calling the 'save method' on the new instance
     new_genre #returns the new instance, new_genre
+  end
+
+  def songs #instance method
+    @songs #returns the collection of songs stored in the @songs instance variable
+  end
+
+  def artists
+    songs.collect { |song| song.artist }.uniq
   end
 
 end

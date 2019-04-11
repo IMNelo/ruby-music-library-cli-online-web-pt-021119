@@ -1,6 +1,7 @@
 class Artist
+  extend Concerns::Findable
 
-  attr_accessor :name #sets and retrieves the name of an artist
+  attr_accessor :name  #sets and retrieves the name of an artist
 
   def initialize(name) #automatically instantiates a new artist & requires an argument (name)
     @name = name #accepts a (name) for the new instance of artist
@@ -8,12 +9,12 @@ class Artist
     @songs = [] #automatically stores instances of songs
   end
 
+  #def name=(name)
+  #  @name = name
+  #end
+
   def self.all #class method
     @@all #returns the collection of artists stored in the @@all class variable
-  end
-
-  def songs #instance method
-    @songs #returns the collection of songs stored in the @songs instance variable
   end
 
   def self.destroy_all #class method
@@ -30,9 +31,17 @@ class Artist
     new_artist #returns the new instance, new_artist
   end
 
+  def songs #instance method
+    @songs #returns the collection of songs stored in the @songs instance variable
+  end
+
   def add_song(song) #instance method
     song.artist= self if song.artist == nil
     self.songs << song unless self.songs.include?(song) #adds new instance of a song to the @songs = [] instance variable unless the song already exists in the collection in which case the code would do nothing
+  end
+
+  def genres
+    songs.collect { |song| song.genre }.uniq
   end
 
 end
